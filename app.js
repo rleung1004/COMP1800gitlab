@@ -9,7 +9,7 @@ var movieHistory = document.querySelector("#movieHistoryCard");
 var myMovies = {
     
 };
-
+// If page opened, check for existing local storage movie history
 if(localStorage.getItem("myMovies")) {
     myMovies = JSON.parse(localStorage.getItem("myMovies"));
     updateMovieHistory();
@@ -26,6 +26,7 @@ function clearMovies() {
     myMovieList.innerHTML = '';
 }
 
+// Update movie history table 
 function updateMovieHistory(movie) {
 
     var myTable= `
@@ -45,6 +46,7 @@ function updateMovieHistory(movie) {
     movieHistory.innerHTML = myTable;
 }
 
+// validation function, checks whether movie key exists or not
 function keyExists(value, obj) {
     obj = Object.keys(obj); 
     for (var i = 0; i < obj.length; i++) {
