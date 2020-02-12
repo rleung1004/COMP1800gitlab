@@ -19,7 +19,7 @@ The map is a method that accepts a transformation function as a parameter. The f
 In this example, my anonymous function is simply returning the original object as a type Number.
 */
 
-userList.map(function(input) {
+let newList = userList.map(function(input) {
 return Number(input)}) 
 }
 
@@ -30,11 +30,11 @@ function typeNumber(input) {
 	return Number(input);
 }
 
-userList.map(typeNumber);
+let newList = userList.map(typeNumber);
 
 // this will now return "Number" because I have transformed my string object into a Number from using map.
-typeOf(userList[0]);
+typeOf(newList[0]);
 
 Within comments, explain exactly what map is doing. Finally, why is the "transformation function" we discussed in class sometimes referred to as a callback function.
 
-The function is called a "callback" because the function is "called" on every element in a JSObject or array. The function must take the original element to be processed as an argument, and the it must return the new element that's going to replace the original element. But it must also be able to invoke the same process into a second element, and a third element, etc.
+The function is called a "callback" because the function is "called" on every element in a JSObject or array. The function must take the original element to be processed as an argument, and the it must return the new element that's going to be in place of the original element in the new array or JSObject. But it must also be able to invoke the same process into a second element, and a third element, etc.
